@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import { Toast } from 'mint-ui'
+  import { Toast } from 'mint-ui'
   export default {
     data() {
       return {
-        lunbotuList:[]
+        lunbotuList: []
       }
     },
     created() {
@@ -22,9 +22,9 @@ import { Toast } from 'mint-ui'
     methods: {
       getLunbotu() {
         this.$http.get('http://www.liulongbin.top:3005/api/getlunbo').then(result => {
-          if(result.body.status == 0){
+          if (result.body.status == 0) {
             this.lunbotuList = result.body.message;
-          }else{
+          } else {
             Toast('加载轮播图失败')
           }
         })
@@ -38,9 +38,9 @@ import { Toast } from 'mint-ui'
     height: 200px;
 
     .mint-swipe-item {
-      img{
-        width:100%;
-        height:100%;
+      img {
+        width: 100%;
+        height: 100%;
       }
     }
 
