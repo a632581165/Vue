@@ -29,27 +29,35 @@ module.exports = {
                 test: /\.css$/, use: ['style-loader', 'css-loader']//配置css文件的第三方模块loader规则
             },
             {
-                test: /\.less$/, use: ['style-loader','css-loader','less-loader']
+                test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader']
             },
             {
-                test: /\.scss$/, use: ['style-loader','css-loader','sass-loader']
+                test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(jpg|png|gif|bmp|jpeg)$/, use: ['url-loader?limit=5543&name=[hash:8]-[name].[ext]']//处理图片文件的loader规则
+                test: /\.(jpg|png|gif|bmp|jpeg)$/,
+                use: [
+                    {
+                        loader:'url-loader?limit=5543&name=[hash:8]-[name].[ext]',
+                        options: {
+                            esModule: false
+                        }
+                    }
+                ]//处理图片文件的loader规则
             },
             {
                 test: /\.(ttf|eot|svg|woff|woff2)$/, use: ['url-loader']//处理字体文件的loader规则
             },
             {
-                test: /\.vue$/, use:'vue-loader' //处理.vue文件的loader规则
+                test: /\.vue$/, use: 'vue-loader' //处理.vue文件的loader规则
             }
             // {
             //     test: /.js$/, use:'babel-loader',exclude:/node_modules/ //配置Babel转换ES高级语法
             // }
         ]
     },
-    resolve:{
-        alias:{
+    resolve: {
+        alias: {
             // "vue$":"vue/dist/vue.js"
         }
     }

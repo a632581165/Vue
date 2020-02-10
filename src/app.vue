@@ -1,6 +1,5 @@
 <template>
   <div class="app-container">
-    <h1>这是App</h1>
     <!-- header顶部区域 -->
     <mt-header fixed title="固定在顶部"></mt-header>
 
@@ -38,5 +37,6 @@
 <style lang="scss" scoped>
   .app-container {
     padding-top: 40px;
+    padding-bottom:50px;
   }
 </style>

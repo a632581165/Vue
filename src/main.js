@@ -5,9 +5,16 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import router from './router.js'
 
+//定义全局过滤器
+import moment from 'moment'
+Vue.filter('dateFormat',function(dataStr,patten = 'YYYY-MM-DD HH:MM:SS'){
+    return moment(dataStr).format(patten)
+})
+
 //导入vue-resource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
+Vue.http.options.root = 'http://www.liulongbin.top:3005';
 
 //导入App的根组件
 import App from './app.vue'
