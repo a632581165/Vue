@@ -15,18 +15,20 @@ Vue.filter('dateFormat',function(dataStr,patten = 'YYYY-MM-DD HH:MM:SS'){
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 Vue.http.options.root = 'http://www.liulongbin.top:3005';
+//设置全局post时候表单数据格式组织形式
+Vue.http.options.emulateJSON = true;
 
 //导入App的根组件
 import App from './app.vue'
 
 //按需导入Mint-ui的header组件
-import { Header,Swipe,SwipeItem } from 'mint-ui'
+import { Header,Swipe,SwipeItem,Button } from 'mint-ui'
 //导入Mint-ui的css
 import 'mint-ui/lib/style.css'
 Vue.component(Header.name, Header)
 Vue.component(Swipe.name,Swipe)
 Vue.component(SwipeItem.name,SwipeItem)
-
+Vue.component(Button.name,Button)
 //导入MUI
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
