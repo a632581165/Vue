@@ -8,6 +8,9 @@ import ShopCarContainer from './components/tabbar/ShopCarContainer.vue'
 import newslist from './components/news/newslist.vue'
 import newsinfo from './components/news/newsinfo.vue'
 import photoList from './components/photos/photoList.vue'
+import photoinfo from './components/photos/photoinfo.vue'
+import goodslist from './components/goods/goodslist.vue'
+import goodsinfo from './components/goods/goodsinfo.vue'
 
 var router = new VueRouter({
     routes:[
@@ -18,7 +21,10 @@ var router = new VueRouter({
         {path:'/shopcar',component:ShopCarContainer},
         {path:'/home/newslist',component:newslist},
         {path:'/home/newsinfo/:id',component:newsinfo},
-        {path:'/home/photoList',component:photoList}
+        {path:'/home/photoList',component:photoList},
+        {path:'/home/photoinfo/:id',component:photoinfo},
+        {path:'/home/goodslist',component:goodslist},
+        {path:'/home/goodsinfo/:id',component:goodsinfo}
     ],
     linkActiveClass:'mui-active'//覆盖默认的路由高亮的类
 

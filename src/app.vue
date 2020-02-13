@@ -53,6 +53,10 @@
       transition: all .5s ease;
   }
   
+  .mint-header{
+    z-index:99 !important;
+  }
+
   .app-container {
     padding-top: 40px;
     overflow-x: hidden;
