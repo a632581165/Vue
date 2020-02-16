@@ -23,7 +23,8 @@
                         <span>市场价:<del>￥{{goodsinfo.market_price}}</del></span>&nbsp;&nbsp;
                         销售价:<span class="now_price">￥{{goodsinfo.sell_price}}</span>
                     </p>
-                    <p>购买数量:<numbox @getCount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox>
+                    <p>
+                        购买数量:<numbox @getCount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox>
                     </p>
                     <p>
                         <mt-button type="primary" size:small>立即购买</mt-button>
@@ -99,6 +100,13 @@
             //添加购物车
             addToShowCar() {
                 this.ballFlag = !this.ballFlag;
+                var goodsinfo = {
+                    id: this.id,
+                    price: this.goodsinfo.sell_price,
+                    count: this.selectCount,
+                    selected: true
+                }
+                this.$store.commit('addToCar', goodsinfo);
             },
             // 动画开始
             beforeEnter(el) {
@@ -121,7 +129,7 @@
                 this.ballFlag = !this.ballFlag;
             },
             // 动画结束
-            getSelectedCount(count){
+            getSelectedCount(count) {
                 // 当子组件把选定的数量传递给父组件goodsinfo的时候,把选中的值传递到data上
                 this.selectCount = count;
             }

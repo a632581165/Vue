@@ -14,7 +14,7 @@
     export default {
         mounted() {
             // 初始化数字选择框组件
-            mui('mui-numbox').numbox();
+            mui('.mui-numbox').numbox();
         },
         methods: {
             // 每当文本框数据被修改,立即通过事件传递给父组件
